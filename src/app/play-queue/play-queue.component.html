@@ -1,0 +1,36 @@
+<div class="play-queue-container">
+  <div class="play-queue-header">
+    <div class="level-left">
+      <div class="level-item" [class]='is_active ? "is-active" : ""' (click)="is_active = true">
+        <h6 class="has-text-white queue-list-title">
+          Danh sách phát
+        </h6>
+      </div>
+      <div class="level-item" [class]='!is_active ? "is-active" : ""' (click)="is_active = false">
+        <h6 class="has-text-white">
+          Nghe gần đây
+        </h6>
+      </div>
+    </div>
+    <div class="level-right">
+      <div class="level">
+        <div class="level-item">
+          <button class="zm-btn zm-tooltip-btn is-hover-circle button" [class]="alarm? 'active': ''" tabindex="0">
+            <span class="material-icons">
+              alarm
+            </span>
+          </button>
+        </div>
+        <div class="level-item">
+            <span id="queue_menu">
+              <button class="zm-btn zm-tooltip-btn is-hover-circle button" tabindex="0">
+                <span class="material-icons">
+                  more_horiz
+                </span>
+              </button>
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

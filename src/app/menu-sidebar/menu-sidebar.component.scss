@@ -1,0 +1,238 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  width: 187px;
+  height: 70px;
+  padding: 0 25px 0 28px;
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  width: 120px;
+  height: 40px;
+  display: inline-block;
+}
+
+//.music-tab::before {
+//  content: '';
+//  position: absolute;
+//  border-top: 1px solid white;
+//  top: -3px;
+//  width: 8px;
+//  left: 0;
+//}
+.sidebar-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-top {
+  margin-bottom: 15px;
+  //height: 100% !important;
+  //display: flex;
+}
+
+.sidebar-bottom {
+  //-webkit-mask-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, .8) 10%, #fff 25%, #fff);
+  margin-top: 15px;
+  height: 100%;
+  width: 100%;
+  //over
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-sidebar-bottom {
+  position: absolute;
+  inset: 0px;
+  overflow: hidden scroll;
+  margin-right: -2px;
+  margin-bottom: 0px;
+  height: 100%;
+  scrollbar-color: transparent transparent;
+  transition: 0.4s;
+}
+
+.scroll-sidebar-bottom:hover {
+  scrollbar-color: rgba(#8f00ff, 0.5) transparent;
+}
+
+.menu .item {
+  height: 38px;
+  display: block;
+  line-height: 38px;
+}
+
+.menu .item a {
+  display: block;
+  color: #dadada;
+  display: flex;
+  align-items: center;
+  text-decoration: navajowhite;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0 25px;
+  cursor: pointer;
+
+}
+
+.menu .item a label {
+  cursor: pointer;
+}
+
+.menu .item a:hover {
+  //opacity: 1;
+  color: #fff;
+}
+
+.menu .item span {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.solid-hr {
+  position: relative;
+  height: 1px;
+}
+
+.solid-hr:after {
+  content: "";
+  border-top: 1px solid var(--border-primary);
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  top: 0;
+}
+
+.vip-banner-sidebar {
+  margin-top: 15px;
+  padding: 15px 8px;
+  border-radius: 8px;
+  margin: 10px 20px;
+  text-align: center;
+  background-image: linear-gradient(117deg, #5a4be7, #c86dd7 102%);
+}
+
+.vip-banner-sidebar .text {
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  border-color: #ffdb00;
+  line-height: 1.67;
+  color: #fff;
+}
+
+.vip-banner-sidebar .zm-btn {
+  background-color: #ffdb00;
+  border-color: #ffdb00;
+  color: var(--black);
+  display: inline-block;
+  padding: 6px 35px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.zm-navbar-my-music {
+  width: 100%;
+  padding-top: 15px !important;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.zm-navbar-my-music .main-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 26px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 28px 8px;
+  white-space: nowrap;
+}
+
+.zm-navbar-my-music .main-title button {
+  color: #dfdfdf;
+  background: transparent;
+  border: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.zm-navbar-my-music .main-title button:hover {
+  color: #fe63da;
+}
+
+.zm-navbar-my-music .main-title button svg {
+  width: 14px;
+}
+
+.zm-navbar-my-music:hover .main-title button {
+  opacity: 1;
+}
+
+.zm-navbar-menu {
+  padding-left: 25px;
+  list-style: none;
+}
+
+.zm-navbar-menu li {
+  line-height: 40px;
+}
+
+.zm-navbar-menu li a {
+  display: flex;
+  color: #dadada;
+  text-decoration: none;
+  font-weight: 400;
+
+}
+
+.zm-navbar-menu li a:hover {
+  color: #fff;
+}
+
+.zm-navbar-menu li a i {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.add-playlist a {
+  padding-left: 25px;
+  border-top: 1px solid rgba(#fff, 0.15);
+  height: 54px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  font-size: 14px;
+}
+
+.add-playlist a span:first-child {
+  margin-right: 10px;
+}
+
+.add-playlist a:hover {
+  filter: brightness(0.9);
+}

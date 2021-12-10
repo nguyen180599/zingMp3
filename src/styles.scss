@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+*:not(.material-icons) {
+  --background: url(https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/theme-background/zma.svg);
+  //--side-color: rgba(255, 255, 255, 0.05);
+  --side-color: hsla(0, 0%, 100%, 0.05);
+  --border-primary: hsla(0, 0%, 100%, 0.1);
+  --tab-active-bg: hsla(0, 0%, 100%, 0.3);
+  --border-img-player: hsla(0, 0%, 100%, 0.8);
+  font-family: 'Inter', sans-serif !important;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif !important;
+}

@@ -1,0 +1,112 @@
+
+.player-control-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.player-controls-left .animate {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+}
+
+.player-controls-left .animate a {
+  cursor: pointer;
+}
+
+.animate .media-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.thumbnail-wrapper {
+  color: #fff;
+  animation-name: spin;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.player-controls-left .animate .thumbnail-wrapper .thumbnail {
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--border-img-player);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.player-controls-left .animate .thumbnail-wrapper .thumbnail figure {
+  margin: 0;
+  padding: 0;
+  background: rgba(#fff, 0.1);
+}
+
+.player-controls-left .animate .thumbnail-wrapper img {
+  width: 75px;
+  height: 75px;
+}
+
+.player-controls-left .animate .thumbnail-wrapper svg {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: calc(120% - 5px);
+  left: calc(50% - 5px);
+  animation-name: half-spin;
+  animation-duration: 4.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 20;
+  color: #fff;
+}
+
+.thumbnail-wrapper svg.note-2 {
+  animation-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+
+}
+
+.thumbnail-wrapper svg.note-3 {
+  animation-delay: 2.4s;
+  -webkit-animation-delay: 2.4s;
+
+}
+
+.thumbnail-wrapper svg.note-4 {
+  animation-delay: 3.6s;
+  -webkit-animation-delay: 3.6s;
+
+}
+
+@keyframes half-spin {
+  0% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+  25% {
+    opacity: 1;
+    transform: rotate(40deg);
+  }
+  50% {
+    opacity: 0;
+    transform: rotate(0);
+  }
+}

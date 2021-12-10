@@ -1,0 +1,146 @@
+.playlist-section {
+  margin-top: 30px;
+}
+
+.playlist-section:first-child {
+  margin-top: 20px;
+}
+
+.playlist-section > h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff
+}
+
+.zm-carousel__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.zm-carousel-item {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+
+}
+
+.zm-carousel-item:first-child {
+  padding-left: 0;
+}
+
+.zm-carousel-item:last-child {
+  padding-right: 0;
+}
+
+.zm-card-image img {
+  width: 100%;
+  height: 100%;
+  transition: 0.7s;
+  display: block;
+}
+
+.zm-card-image {
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.zm-card-image:hover img {
+  transform: scale(1.12);
+}
+
+
+.zm-card-content .title {
+  margin-bottom: 4px;
+}
+
+.zm-card-content .title a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: none;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(#fff, 0.5);
+  margin: 0;
+  line-height: 1.33;
+}
+
+.zm-card-content .subtitle a {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(#fff, 0.5);
+  text-decoration: none;
+}
+
+.zm-card-content .subtitle a:hover {
+  color: #fe63da;
+}
+
+.playlist-action {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  top: 0;
+  background: rgba(#000, 0.35);
+  opacity: 0;
+}
+
+.zm-card-image:hover .playlist-action {
+  opacity: 1;
+}
+
+.playlist-action button {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.playlist-action button:not(.play-music):hover {
+  background: rgba(#fff, 0.2);
+  filter: brightness(0.9);
+}
+
+.playlist-action button:not(.play-music) span {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.play-music {
+  width: 45px !important;
+  height: 45px !important;
+}
+
+.play-music span {
+  font-size: 45px;
+  font-weight: 200;
+}
+
+.play-music:hover {
+  filter: brightness(0.85);
+}
+
+.zm-card-content .title a:hover {
+  color: #fe63da;;
+}
+

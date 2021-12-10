@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.play-queue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 8px;
+}
+
+.level-left {
+  display: flex;
+  align-items: center;
+  //justify-content: start;
+  flex: 1 1;
+  border-radius: 999px;
+  background-color: var(--border-primary);
+  padding: 3px;
+}
+
+.level-item {
+  padding: 5px 0;
+  color: #dadada;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  align-items: center;
+  flex-grow: 1;
+  border-radius: 999px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.level-item:hover {
+  color: #fff;
+}
+
+.is-active {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .07);
+  background-color: var(--tab-active-bg);
+  color: #fff;
+}
+
+.level-item h6 {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.level-right .level {
+  display: flex;
+  align-items: center;
+}
+
+.zm-tooltip-btn {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  background-color: var(--border-primary);
+}
+
+.zm-tooltip-btn:hover {
+  filter: brightness(0.9);
+}
+
+.zm-tooltip-btn span {
+  font-size: 16px;
+}
+
+.active {
+  background-color: #ed2b91;
+}
+
+#queue_menu .zm-tooltip-btn span {
+  font-size: 20px;
+  font-weight: 600;
+
+}
