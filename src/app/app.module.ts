@@ -19,6 +19,7 @@ import {HistoryComponent} from './home/component/history/history.component';
 import {PlaylistSectionComponent} from './home/component/playlist-section/playlist-section.component';
 import {PlayerControlComponent} from './player-control/player-control.component';
 import {AngMusicPlayerModule} from "ang-music-player";
+import {PlyrModule} from "ngx-plyr";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {AngMusicPlayerModule} from "ang-music-player";
     MatSliderModule,
     MatIconModule,
     SwiperModule,
-    AngMusicPlayerModule
+    AngMusicPlayerModule,
+    PlyrModule
   ],
   providers: [],
   bootstrap: [AppComponent]

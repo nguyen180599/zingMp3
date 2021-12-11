@@ -22,6 +22,8 @@
     "@angular/router": "~13.0.0",
     "@vime/core": "^5.3.0",
     "ang-music-player": "^0.0.4",
+    "ngx-plyr": "^4.0.0",
+    "plyr": "^3.6.9",
     "rxjs": "~7.4.0",
     "swiper": "^7.3.1",
     "tslib": "^2.3.0",

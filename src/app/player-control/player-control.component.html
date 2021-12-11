@@ -57,11 +57,16 @@
     </div>
   </div>
   <div class="player-controls-center">
-    <div class="volume">
-      <mat-slider thumbLabel tickInterval="1" start="90"></mat-slider>
+      <ang-music-player
+        [audioList]=audioList
+        height="90px"
+        backgroundColor="transparent"
+        audioTimeColor="hsla(0, 0%, 100%, 0.55"
+        audioTitle="none"
+        style="margin: 0; padding: 0"
+      ></ang-music-player>
 
-      <ang-music-player [audioList]=audioList></ang-music-player>
-    </div>
+
   </div>
   <div class="player-controls-right">
 
