@@ -1,0 +1,94 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "name": "Chẳng ai có thể thay thế em",
+      "path": "assets/musics/ChangAiCoTheThayTheEm.mp3",
+      "img": "assets/images/ChangAiCoTheThayTheEm.jpg",
+      "singer": ["abc", "def"],
+      "hot": true,
+      "nearly": 1,
+      "albumID": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 2,
+      "name": "Chuyện đôi ta",
+      "path": "assets/musics/ChuyenDoiTa.mp3",
+        "img": "assets/images/khongnoinhieu.jpg",
+      "singer": ["dèf", "123"],
+      "hot": false,
+      "nearly": 2,
+      "albumID": [1, 2, 3]
+    },
+    {
+      "id": 3,
+      "name": "Chẳng ai có thể thay thế em",
+      "path": "assets/musics/ChangAiCoTheThayTheEm.mp3",
+      "img": "assets/images/ChangAiCoTheThayTheEm.jpg",
+      "singer": ["abc", "def"],
+      "hot": true,
+      "nearly": 3,
+      "albumID": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 4,
+      "name": "Chẳng ai có thể thay thế em",
+      "path": "assets/musics/ChangAiCoTheThayTheEm.mp3",
+      "img": "assets/images/ChangAiCoTheThayTheEm.jpg",
+      "singer": ["abc", "def"],
+      "hot": true,
+      "nearly": 4,
+      "albumID": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 5,
+      "name": "Chẳng ai có thể thay thế em",
+      "path": "assets/musics/ChangAiCoTheThayTheEm.mp3",
+      "img": "assets/images/ChangAiCoTheThayTheEm.jpg",
+      "singer": ["abc", "def"],
+      "hot": true,
+      "nearly": 5,
+      "albumID": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 6,
+      "name": "Chẳng ai có thể thay thế em",
+      "path": "assets/musics/ChangAiCoTheThayTheEm.mp3",
+      "img": "assets/images/ChangAiCoTheThayTheEm.jpg",
+      "singer": ["abc", "def"],
+      "hot": true,
+      "nearly": 6,
+      "albumID": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 7,
+      "name": "Chẳng ai có thể thay thế em",
+      "path": "assets/musics/ChangAiCoTheThayTheEm.mp3",
+      "img": "assets/images/ChangAiCoTheThayTheEm.jpg",
+      "singer": ["abc", "def"],
+      "hot": true,
+      "nearly": 0,
+      "albumID": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 8,
+      "name": "Chẳng ai có thể thay thế em",
+      "path": "assets/musics/ChangAiCoTheThayTheEm.mp3",
+      "img": "assets/images/ChangAiCoTheThayTheEm.jpg",
+      "singer": ["abc", "def"],
+      "hot": true,
+      "nearly": 8,
+      "albumID": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 9,
+      "name": "Chẳng ai có thể thay thế em",
+      "path": "assets/musics/ChangAiCoTheThayTheEm.mp3",
+      "img": "assets/images/ChangAiCoTheThayTheEm.jpg",
+      "singer": ["abc", "def"],
+      "hot": false,
+      "nearly": 0,
+      "albumID": [1, 2, 3, 4, 5]
+    }
+  ]
+}

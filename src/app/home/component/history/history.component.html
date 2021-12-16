@@ -4,27 +4,27 @@
     <a href="/mymusic/history">
       Tất cả&nbsp;
       <i class="material-icons">
-        <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-right" role="img"
-             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"
-             class="svg-inline--fa fa-chevron-right fa-w-8">
-          <path fill=" currentColor"
+        <svg aria-hidden="true" class="svg-inline--fa fa-chevron-right fa-w-8" data-icon="chevron-right"
+             data-prefix="fal" focusable="false"
+             role="img" viewBox="0 0 256 512"
+             xmlns="http://www.w3.org/2000/svg">
+          <path class=""
                 d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"
-                class=""></path>
+                fill=" currentColor"></path>
         </svg>
       </i>
     </a></h3>
   <div class="zm-carousel-wrapper">
     <div class="zm-carousel">
-      <div class="zm-carousel-item is-fullhd-1.4 is-widescreen-1.4 is-desktop-2 is-touch-20 is-tablet-20">
+      <div *ngFor="let song of listSongs | slice:0:6;"
+           class="zm-carousel-item is-fullhd-1.4 is-widescreen-1.4 is-desktop-2 is-touch-20 is-tablet-20">
         <div class="playlist-wrapper is-title">
           <div class="zm-card">
-            <div><a class=""
-                    href="/album/Nhac-Danh-Cho-Game-Thu-Lien-Minh-League-Of-Legends-Jeff-Danna-Mychael-Danna-Pentakill-G-I-DLE/ZOAEEDCB.html"
-                    title="Nhạc Dành Cho Game Thủ Liên Minh">
+            <div routerLink="/detai/{{song.name | nameToUrl}}">
               <div class="zm-card-image">
                 <img
                   alt=""
-                  src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/9/7/c/7/97c7e9f277edf5cdb3269426c5b00ad2.jpg">
+                  src="../../../../{{song.img}}">
                 <div class="playlist-action">
                   <div class="add-to-lovelist">
                     <button class="add">
@@ -34,9 +34,17 @@
                     </button>
                   </div>
                   <div class="play">
-                    <button class="play-music">
-                      <span class="material-icons outlined">
-                        play_circle_outline
+                    <button (click)="addToPlayList(song, $event)"
+                            class="play-music">
+                      <span *ngIf="!isPlay" class="material-icons outlined">
+                        <svg _ngcontent-qob-c25="" aria-hidden="true" class="svg-inline--fa fa-play fa-w-14 fa-lg" data-icon="play"
+                             data-prefix="fas" focusable="false" role="img" viewBox="0 0 448 512"
+                             xmlns="http://www.w3.org/2000/svg"><path _ngcontent-qob-c25=""
+                                                                                d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                                                                                fill="currentColor"></path></svg>
+                      </span>
+                      <span *ngIf="isPlay" class="musicIsPlay">
+                        <img alt="" src="https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/icons/icon-playing.gif">
                       </span>
                     </button>
                   </div>
@@ -49,254 +57,13 @@
                   </div>
                 </div>
               </div>
-            </a></div>
-            <div class="zm-card-content"><h4 class="title is-6"><a class=""
-                                                                   href="/album/Nhac-Danh-Cho-Game-Thu-Lien-Minh-League-Of-Legends-Jeff-Danna-Mychael-Danna-Pentakill-G-I-DLE/ZOAEEDCB.html"
-                                                                   title="Nhạc Dành Cho Game Thủ Liên Minh"><span><span><span>Nhạc Dành Cho</span><br><span>Game Thủ Liên Minh</span></span><span
-              style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span></a></h4></div>
-          </div>
-        </div>
-      </div>
-      <div class="zm-carousel-item is-fullhd-1.4 is-widescreen-1.4 is-desktop-2 is-touch-20 is-tablet-20">
-        <div class="playlist-wrapper is-title">
-          <div class="zm-card">
-            <div><a class="" href="/album/Game-On-BTS-EXO-AleXa-MOMOLAND/ZOUZC8F0.html" title="Game On">
-              <div class="zm-card-image">
-                <img
-                  alt=""
-                  src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/0/e/e/b/0eeb81e163a15eddceda78d06cf88713.jpg">
-                <div class="playlist-action">
-                  <div class="add-to-lovelist">
-                    <button class="add">
-                      <span class="material-icons outlined">
-                        favorite_border
-                      </span>
-                    </button>
-                  </div>
-                  <div class="play">
-                    <button class="play-music">
-                      <span class="material-icons outlined">
-                        play_circle_outline
-                      </span>
-                    </button>
-                  </div>
-                  <div class="more">
-                    <button>
-                      <span class="material-icons">
-                        more_horiz
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </a></div>
-            <div class="zm-card-content"><h4 class="title is-6"><a class=""
-                                                                   href="/album/Game-On-BTS-EXO-AleXa-MOMOLAND/ZOUZC8F0.html"
-                                                                   title="Game On"><span><span><span>Game On</span></span><span
-              style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span></a></h4></div>
-          </div>
-        </div>
-      </div>
-      <div class="zm-carousel-item is-fullhd-1.4 is-widescreen-1.4 is-desktop-2 is-touch-20 is-tablet-20">
-        <div class="playlist-wrapper is-title">
-          <div class="zm-card">
-            <div><a class="" href="/album/Nhac-Moi-Moi-Ngay-Shawn-Mendes-Isaac-Alan-Walker-IVE/67WIO6CF.html"
-                    title="Nhạc Mới Mỗi Ngày">
-              <div class="zm-card-image">
-                <img
-                  alt=""
-                  src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/5/a/7/5/5a75949c935b96579ecb59fa20c1063d.jpg">
-                <div class="playlist-action">
-                  <div class="add-to-lovelist">
-                    <button class="add">
-                      <span class="material-icons outlined">
-                        favorite_border
-                      </span>
-                    </button>
-                  </div>
-                  <div class="play">
-                    <button class="play-music">
-                      <span class="material-icons outlined">
-                        play_circle_outline
-                      </span>
-                    </button>
-                  </div>
-                  <div class="more">
-                    <button>
-                      <span class="material-icons">
-                        more_horiz
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </a></div>
-            <div class="zm-card-content"><h4 class="title is-6"><a class=""
-                                                                   href="/album/Nhac-Moi-Moi-Ngay-Shawn-Mendes-Isaac-Alan-Walker-IVE/67WIO6CF.html"
-                                                                   title="Nhạc Mới Mỗi Ngày"><span><span><span>Nhạc Mới Mỗi Ngày</span></span><span
-              style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span></a></h4></div>
-          </div>
-        </div>
-      </div>
-      <div class="zm-carousel-item is-fullhd-1.4 is-widescreen-1.4 is-desktop-2 is-touch-20 is-tablet-20">
-        <div class="playlist-wrapper is-title">
-          <div class="zm-card">
-            <div><a class="" href="/playlist/a/Z79UEW9D.html" title="a">
-              <div class="zm-card-image">
-                <img
-                  alt=""
-                  src="https://photo-playlist-zmp3.zadn.vn/s1/user-playlist?src=HavwqN7EvKCI1og5AfZbHm1SUTXWcB973LmkpZ63kKjRMI_DD83b70a8VCXaqkGTMGz_c3A5vnzU3MV5Tu7hMGm6B8S-sQ0DHL5Xotd8l5H232JBUT7h61TOSvz-XEvC55rmcNg7l1b5NYRB9OBf6KuDTCr8r-zD9GrsoKhMwLTvJI3538JY73i4VuvOpR9HTqDkaW6Rxn1tGtF3Ivdk428KUP0Pox4L9aGgbKtBu1Lo6NR07iEzHNzt8i4IhRf9St4apWJm-Xb_DtR5JxApHpHZFvORwUL7C75an4RvvKTyTdgK4QkmGNzrACP4fxKLU7j_aX2ZjKDyV2_1GFBZBYWiVAn4y-OeBoXcyWQawZy&amp;size=thumb/240_240">
-                <div class="playlist-action">
-                  <div class="add-to-lovelist">
-                    <button class="add">
-                      <span class="material-icons outlined">
-                        favorite_border
-                      </span>
-                    </button>
-                  </div>
-                  <div class="play">
-                    <button class="play-music">
-                      <span class="material-icons outlined">
-                        play_circle_outline
-                      </span>
-                    </button>
-                  </div>
-                  <div class="more">
-                    <button>
-                      <span class="material-icons">
-                        more_horiz
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </a></div>
-            <div class="zm-card-content"><h4 class="title is-6"><a class="" href="/playlist/a/Z79UEW9D.html"
-                                                                   title="a"><span><span><span>a</span></span><span
-              style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span></a></h4></div>
-          </div>
-        </div>
-      </div>
-      <div class="zm-carousel-item is-fullhd-1.4 is-widescreen-1.4 is-desktop-2 is-touch-20 is-tablet-20">
-        <div class="playlist-wrapper is-title">
-          <div class="zm-card">
-            <div><a class=""
-                    href="/album/Nhung-Bai-Hat-Hay-Nhat-Cua-Son-Tung-M-TP-Son-Tung-M-TP/ZWZAC9BF.html"
-                    title="Những Bài Hát Hay Nhất Của Sơn Tùng M-TP">
-              <div class="zm-card-image">
-                <img
-                  alt=""
-                  src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/0/6/0/4/0604b2039e6be2b7c8d4f3243b24594d.jpg">
-                <div class="playlist-action">
-                  <div class="add-to-lovelist">
-                    <button class="add">
-                      <span class="material-icons outlined">
-                        favorite_border
-                      </span>
-                    </button>
-                  </div>
-                  <div class="play">
-                    <button class="play-music">
-                      <span class="material-icons outlined">
-                        play_circle_outline
-                      </span>
-                    </button>
-                  </div>
-                  <div class="more">
-                    <button>
-                      <span class="material-icons">
-                        more_horiz
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </a></div>
-            <div class="zm-card-content"><h4 class="title is-6"><a class=""
-                                                                   href="/album/Nhung-Bai-Hat-Hay-Nhat-Cua-Son-Tung-M-TP-Son-Tung-M-TP/ZWZAC9BF.html"
-                                                                   title="Những Bài Hát Hay Nhất Của Sơn Tùng M-TP"><span><span><span>Những Bài Hát Hay</span><br><span><span>Nhất Của Sơn Tùng…</span></span></span><span
-              style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span></a></h4></div>
-          </div>
-        </div>
-      </div>
-      <div class="zm-carousel-item is-fullhd-1.4 is-widescreen-1.4 is-desktop-2 is-touch-20 is-tablet-20">
-        <div class="playlist-wrapper is-title">
-          <div class="zm-card">
-            <div><a class="" href="/album/zingchart-DIMZ-TVk-NH4T-Phat-Ho/ZO68OC68.html" title="#zingchart">
-              <div class="zm-card-image">
-                <img
-                  alt=""
-                  src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/e/d/2/5/ed251cf560be4747e7737b535c357f07.jpg">
-                <div class="playlist-action">
-                  <div class="add-to-lovelist">
-                    <button class="add">
-                      <span class="material-icons outlined">
-                        favorite_border
-                      </span>
-                    </button>
-                  </div>
-                  <div class="play">
-                    <button class="play-music">
-                      <span class="material-icons outlined">
-                        play_circle_outline
-                      </span>
-                    </button>
-                  </div>
-                  <div class="more">
-                    <button>
-                      <span class="material-icons">
-                        more_horiz
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </a></div>
-            <div class="zm-card-content"><h4 class="title is-6"><a class=""
-                                                                   href="/album/zingchart-DIMZ-TVk-NH4T-Phat-Ho/ZO68OC68.html"
-                                                                   title="#zingchart"><span><span><span>#zingchart</span></span><span
-              style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span></a></h4></div>
-          </div>
-        </div>
-      </div>
-      <div class="zm-carousel-item is-fullhd-1.4 is-widescreen-1.4 is-desktop-2 is-touch-20 is-tablet-20">
-        <div class="playlist-wrapper is-title">
-          <div class="zm-card">
-            <div><a class="" href="/album/Nha-Nha-Nghe-Gi-Adele-Taylor-Swift-W-N-SOOBIN/67WIUEW8.html"
-                    title="Nhà Nhà Nghe Gì?">
-              <div class="zm-card-image">
-                <img
-                  alt=""
-                  src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/e/e/3/6/ee36ddd631184e40d52df015b96f321a.jpg">
-                <div class="playlist-action">
-                  <div class="add-to-lovelist">
-                    <button class="add">
-                      <span class="material-icons outlined">
-                        favorite_border
-                      </span>
-                    </button>
-                  </div>
-                  <div class="play">
-                    <button class="play-music">
-                      <span class="material-icons outlined">
-                        play_circle_outline
-                      </span>
-                    </button>
-                  </div>
-                  <div class="more">
-                    <button>
-                      <span class="material-icons">
-                        more_horiz
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </a></div>
-            <div class="zm-card-content"><h4 class="title is-6"><a class=""
-                                                                   href="/album/Nha-Nha-Nghe-Gi-Adele-Taylor-Swift-W-N-SOOBIN/67WIUEW8.html"
-                                                                   title="Nhà Nhà Nghe Gì?"><span><span><span>Nhà Nhà Nghe Gì?</span></span><span
-              style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span></a></h4></div>
+            </div>
+            <div class="zm-card-content"><h4 class="title is-6">
+              <a class=""
+                 href="/detail/{{song.name | nameToUrl}}"
+                 title="Nhạc Dành Cho Game Thủ Liên Minh"><span><span><span>{{song.name}} </span><br><span>Game Thủ Liên Minh</span></span><span
+                style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span>
+              </a></h4></div>
           </div>
         </div>
       </div>

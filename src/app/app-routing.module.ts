@@ -5,7 +5,7 @@ import {DetaiComponent} from "./detai/detai.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'detail', component: DetaiComponent},
+  {path: 'detail/:id', component: DetaiComponent},
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -20,6 +21,8 @@ import {PlaylistSectionComponent} from './home/component/playlist-section/playli
 import {PlayerControlComponent} from './player-control/player-control.component';
 import {AngMusicPlayerModule} from "ang-music-player";
 import {PlyrModule} from "ngx-plyr";
+import {FormsModule} from "@angular/forms";
+import { NameToUrlPipe } from './name-to-url.pipe';
 
 @NgModule({
   declarations: [
@@ -32,17 +35,20 @@ import {PlyrModule} from "ngx-plyr";
     SliderComponent,
     HistoryComponent,
     PlaylistSectionComponent,
-    PlayerControlComponent
+    PlayerControlComponent,
+    NameToUrlPipe
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatIconModule,
     SwiperModule,
     AngMusicPlayerModule,
-    PlyrModule
+    PlyrModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

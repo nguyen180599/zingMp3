@@ -1,12 +1,12 @@
 <div class="play-queue-container">
   <div class="play-queue-header">
     <div class="level-left">
-      <div class="level-item" [class]='is_active ? "is-active" : ""' (click)="is_active = true">
+      <div (click)="is_active = true" [class]='is_active ? "is-active" : ""' class="level-item">
         <h6 class="has-text-white queue-list-title">
           Danh sách phát
         </h6>
       </div>
-      <div class="level-item" [class]='!is_active ? "is-active" : ""' (click)="is_active = false">
+      <div (click)="is_active = false" [class]='!is_active ? "is-active" : ""' class="level-item">
         <h6 class="has-text-white">
           Nghe gần đây
         </h6>
@@ -15,7 +15,7 @@
     <div class="level-right">
       <div class="level">
         <div class="level-item">
-          <button class="zm-btn zm-tooltip-btn is-hover-circle button" [class]="alarm? 'active': ''" tabindex="0">
+          <button [class]="alarm? 'active': ''" class="zm-btn zm-tooltip-btn is-hover-circle button" tabindex="0">
             <span class="material-icons">
               alarm
             </span>
@@ -29,6 +29,42 @@
                 </span>
               </button>
             </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="play-queue-main">
+    <div class="media is-pre">
+      <div class="media-left">
+        <div class="song-thumb">
+          <figure class="image is-40x40" title="Mập Mờ" style="--image-background: url('https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/2/c/a/d/2cad2920d72bbd50cfac43c3cbd000dc.jpg')"></figure>
+          <div class="opacity "></div>
+          <div class="zm-actions-container">
+            <div class="zm-box zm-actions">
+              <button class="zm-btn zm-tooltip-btn animation-like is-hidden active is-hover-circle button" tabindex="0">
+                <i class="icon ic-like"></i><i class="icon ic-like-full"></i></button>
+              <button class="zm-btn action-play  button" tabindex="0"><i class="icon action-play ic-play"></i></button>
+              <button class="zm-btn zm-tooltip-btn is-hidden is-hover-circle button" tabindex="0"><i
+                class="icon ic-more"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="title-wrapper"><span class="item-title title"><span><span><span>Mập Mờ</span></span><span
+            style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span></span></div>
+          <h3 class="is-one-line is-truncate subtitle"><a class="is-ghost" href="/nghe-si/Phi-Phuong-Anh">Phí Phương
+            Anh</a>, <a class="is-ghost" href="/nghe-si/RIN9">RIN9</a></h3></div>
+      </div>
+      <div class="media-right">
+        <div class="level">
+          <div class="level-item">
+            <button class="zm-btn zm-tooltip-btn animation-like undefined active is-hover-circle button" tabindex="0"><i
+              class="icon ic-like"></i><i class="icon ic-like-full"></i></button>
+          </div>
+          <div class="level-item">
+            <button class="zm-btn zm-tooltip-btn is-hover-circle button" tabindex="0"><i class="icon ic-more"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>

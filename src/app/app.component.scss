@@ -49,9 +49,12 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  background: url(https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/theme-player/zma.png) repeat-x;
-  background-size: 100% auto;
-  border-top: 1px solid var(--border-primary);
+  background-image: url(https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/theme-player/zma.png);
+  background-size: 1920px 100%;
+  background-position: 50%;
+  background-repeat: repeat-x;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1.5px solid var(--border-primary);
   z-index: 15;
   overflow: hidden;
 }

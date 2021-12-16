@@ -1,47 +1,56 @@
 <div class="player-control-container">
   <div class="player-controls-left">
     <div class="level-item is-narrow">
-      <div class="media animate">
+      <div class="media">
         <div class="media-left"><a class="" href="/album/Nhac-Moi-Moi-Ngay-Bao-Anh-Rita-Ora-K-ICM-IVE/67WIO6CF.html">
-          <div class="thumbnail-wrapper">
+          <div [style]="isPlaying ? 'animation-play-state: running;' : 'animation-play-state: paused;'"
+               class="thumbnail-wrapper animate">
             <div class="thumbnail">
               <figure class="image is-50x50 is-rounded"><img
                 alt=""
                 src="https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/a/6/5/7/a657568d578b6e9ad66fa7d7b5b524cc.jpg">
               </figure>
             </div>
-            <span style="color: #fff">
-            <svg class="note note-1" viewBox="0 0 512 512">
-              <path
-                d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"
-                fill="currentColor"></path>
-            </svg></span>
-            <svg class="note note-2" viewBox="0 0 384 512">
-              <path
-                d="M310.94 1.33l-96.53 28.51A32 32 0 0 0 192 60.34V360a148.76 148.76 0 0 0-48-8c-61.86 0-112 35.82-112 80s50.14 80 112 80 112-35.82 112-80V148.15l73-21.39a32 32 0 0 0 23-30.71V32a32 32 0 0 0-41.06-30.67z"
-                fill="currentColor"></path>
-            </svg>
-            <svg class="note note-3" viewBox="0 0 512 512">
-              <path
-                d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"
-                fill="currentColor"></path>
-            </svg>
-            <svg class="note note-4" viewBox="0 0 384 512">
-              <path
-                d="M310.94 1.33l-96.53 28.51A32 32 0 0 0 192 60.34V360a148.76 148.76 0 0 0-48-8c-61.86 0-112 35.82-112 80s50.14 80 112 80 112-35.82 112-80V148.15l73-21.39a32 32 0 0 0 23-30.71V32a32 32 0 0 0-41.06-30.67z"
-                fill="currentColor"></path>
-            </svg>
+            <!--  icons music  -->
+            <!--            <svg class="note note-1" viewBox="0 0 512 512">
+                          <path
+                            d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"
+                            fill="currentColor"></path>
+                        </svg>
+                        <svg class="note note-2" viewBox="0 0 384 512">
+                          <path
+                            d="M310.94 1.33l-96.53 28.51A32 32 0 0 0 192 60.34V360a148.76 148.76 0 0 0-48-8c-61.86 0-112 35.82-112 80s50.14 80 112 80 112-35.82 112-80V148.15l73-21.39a32 32 0 0 0 23-30.71V32a32 32 0 0 0-41.06-30.67z"
+                            fill="currentColor"></path>
+                        </svg>
+                        <svg class="note note-3" viewBox="0 0 512 512">
+                          <path
+                            d="M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"
+                            fill="currentColor"></path>
+                        </svg>
+                        <svg class="note note-4" viewBox="0 0 384 512">
+                          <path
+                            d="M310.94 1.33l-96.53 28.51A32 32 0 0 0 192 60.34V360a148.76 148.76 0 0 0-48-8c-61.86 0-112 35.82-112 80s50.14 80 112 80 112-35.82 112-80V148.15l73-21.39a32 32 0 0 0 23-30.71V32a32 32 0 0 0-41.06-30.67z"
+                            fill="currentColor"></path>
+                        </svg> -->
           </div>
         </a></div>
         <div class="media-content">
           <div class="is-mark level-left">
-            <div class="song-info-wrapper" style=""><span class="song-title-item"><a class=""
-                                                                                     href="/album/Nhac-Moi-Moi-Ngay-Bao-Anh-Rita-Ora-K-ICM-IVE/67WIO6CF.html"><div
-              class="title-wrapper"><span class="item-title title">Deja Vu</span></div></a></span></div>
+            <div class="song-info-wrapper" style="">
+              <span class="song-title-item">
+                <a class="" href="/album/Nhac-Moi-Moi-Ngay-Bao-Anh-Rita-Ora-K-ICM-IVE/67WIO6CF.html">
+                  <div class="title-wrapper"><span class="item-title title">Deja Vu</span></div>
+                </a>
+              </span>
+            </div>
           </div>
-          <h3 class="is-one-line is-truncate subtitle"><i class="icon indicator ic-explicit"></i><a class="is-ghost"
-                                                                                                    href="/nghe-si/James-Arthur">James
-            Arthur</a></h3></div>
+          <h3 class="is-one-line is-truncate subtitle">
+            <i class="icon indicator ic-explicit"></i>
+            <a class="is-ghost" href="/nghe-si/James-Arthur">
+              James Arthur
+            </a>
+          </h3>
+        </div>
         <div class="media-right">
           <div class="level">
             <div class="level-item">
@@ -57,18 +66,131 @@
     </div>
   </div>
   <div class="player-controls-center">
-      <ang-music-player
-        [audioList]=audioList
-        height="90px"
-        backgroundColor="transparent"
-        audioTimeColor="hsla(0, 0%, 100%, 0.55"
-        audioTitle="none"
-        style="margin: 0; padding: 0"
-      ></ang-music-player>
+    <div class="control">
+      <div (click)="randomBtn()" [class]="isRandom ? 'active' : ''" class="btn btn-random">
+        <i>
+          <svg aria-hidden="true" class="svg-inline--fa fa-random fa-w-16 fa-lg" data-icon="random" data-prefix="far"
+               focusable="false"
+               role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path class=""
+                  d="M505 400l-79.2 72.9c-15.1 15.1-41.8 4.4-41.8-17v-40h-31c-3.3 0-6.5-1.4-8.8-3.9l-89.8-97.2 38.1-41.3 79.8 86.3H384v-48c0-21.4 26.7-32.1 41.8-17l79.2 71c9.3 9.6 9.3 24.8 0 34.2zM12 152h91.8l79.8 86.3 38.1-41.3-89.8-97.2c-2.3-2.5-5.5-3.9-8.8-3.9H12c-6.6 0-12 5.4-12 12v32c0 6.7 5.4 12.1 12 12.1zm493-41.9l-79.2-71C410.7 24 384 34.7 384 56v40h-31c-3.3 0-6.5 1.4-8.8 3.9L103.8 360H12c-6.6 0-12 5.4-12 12v32c0 6.6 5.4 12 12 12h111c3.3 0 6.5-1.4 8.8-3.9L372.2 152H384v48c0 21.4 26.7 32.1 41.8 17l79.2-73c9.3-9.4 9.3-24.6 0-33.9z"
+                  fill="currentColor"></path>
+          </svg>
+        </i>
+      </div>
+      <div (click)="prevSong()" class="btn btn-prev">
+        <i>
+          <svg aria-hidden="true" class="svg-inline--fa fa-step-backward fa-w-14 fa-lg" data-icon="step-backward"
+               data-prefix="far" focusable="false"
+               role="img" viewBox="0 0 448 512"
+               xmlns="http://www.w3.org/2000/svg">
+            <path class=""
+                  d="M76 480h24c6.6 0 12-5.4 12-12V285l219.5 187.6c20.6 17.2 52.5 2.8 52.5-24.6V64c0-27.4-31.9-41.8-52.5-24.6L112 228.1V44c0-6.6-5.4-12-12-12H76c-6.6 0-12 5.4-12 12v424c0 6.6 5.4 12 12 12zM336 98.5v315.1L149.3 256.5 336 98.5z"
+                  fill="currentColor"></path>
+          </svg>
+        </i>
+      </div>
+      <div (click)="playBtn()" [class]="" class="btn btn-toggle-play">
+        <i (click)="isPlaying = false" *ngIf="isPlaying">
+          <svg aria-hidden="true" class="svg-inline--fa fa-pause fa-w-14 fa-fw fa-lg" data-icon="pause"
+               data-prefix="fas" focusable="false"
+               role="img" viewBox="0 0 448 512"
+               xmlns="http://www.w3.org/2000/svg">
+            <path class=""
+                  d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"
+                  fill="currentColor"></path>
+          </svg>
+        </i>
+        <i (click)="isPlaying = true" *ngIf="!isPlaying">
+          <svg aria-hidden="true" class="svg-inline--fa fa-play fa-w-14 fa-lg" data-icon="play" data-prefix="fas"
+               focusable="false"
+               role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path class=""
+                  d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                  fill="currentColor"></path>
+          </svg>
+        </i>
+      </div>
+      <div (click)="nextSong()" class="btn btn-next">
+        <i>
+          <svg aria-hidden="true" class="svg-inline--fa fa-step-forward fa-w-14 fa-lg" data-icon="step-forward"
+               data-prefix="far" focusable="false"
+               role="img" viewBox="0 0 448 512"
+               xmlns="http://www.w3.org/2000/svg">
+            <path class=""
+                  d="M372 32h-24c-6.6 0-12 5.4-12 12v183L116.5 39.4C95.9 22.3 64 36.6 64 64v384c0 27.4 31.9 41.8 52.5 24.6L336 283.9V468c0 6.6 5.4 12 12 12h24c6.6 0 12-5.4 12-12V44c0-6.6-5.4-12-12-12zM112 413.5V98.4l186.7 157.1-186.7 158z"
+                  fill="currentColor"></path>
+          </svg>
+        </i>
+      </div>
+      <div (click)="repeatBtn()" [class]="isRepeat ? 'active' : ''" class="btn btn-repeat">
+        <i>
+          <svg aria-hidden="true" class="svg-inline--fa fa-repeat fa-w-16 fa-lg" data-icon="repeat" data-prefix="fal"
+               focusable="false"
+               role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path class=""
+                  d="M512 256c0 88.225-71.775 160-160 160H110.628l68.201 68.201c4.686 4.686 4.686 12.284 0 16.971l-5.656 5.656c-4.686 4.686-12.284 4.686-16.971 0l-98.343-98.343c-4.686-4.686-4.686-12.284 0-16.971l98.343-98.343c4.686-4.686 12.284-4.686 16.971 0l5.656 5.656c4.686 4.686 4.686 12.284 0 16.971L110.628 384H352c70.579 0 128-57.421 128-128 0-28.555-9.403-54.952-25.271-76.268-3.567-4.792-3.118-11.462 1.106-15.686l5.705-5.705c5.16-5.16 13.678-4.547 18.083 1.271C499.935 186.438 512 219.835 512 256zM57.271 332.268C41.403 310.952 32 284.555 32 256c0-70.579 57.421-128 128-128h241.372l-68.201 68.201c-4.686 4.686-4.686 12.284 0 16.971l5.656 5.656c4.686 4.686 12.284 4.686 16.971 0l98.343-98.343c4.686-4.686 4.686-12.284 0-16.971L355.799 5.172c-4.686-4.686-12.284-4.686-16.971 0l-5.656 5.656c-4.686 4.686-4.686 12.284 0 16.971L401.372 96H160C71.775 96 0 167.775 0 256c0 36.165 12.065 69.562 32.376 96.387 4.405 5.818 12.923 6.432 18.083 1.271l5.705-5.705c4.225-4.224 4.674-10.893 1.107-15.685z"
+                  fill="currentColor"></path>
+          </svg>
+        </i>
+      </div>
+    </div>
+    <audio #audio (timeupdate)="handle()" [loop]="isRepeat">
+      <source #source src="{{this.audioList[this.currentIndex].url}}" type="audio/mpeg">
+    </audio>
+    <div class="player">
+      <span> {{formatTime(currentTime)}}</span>
+      <input (change)="updateCurrentTime($event)" class="progress" id="progress" max="{{audio.duration}}" min="0"
+             step="1" type="range"
+             value="{{currentTime}}">
+      <span>{{audio.duration ? formatTime(audio.duration) : formatTime(0)}}</span>
+    </div>
 
 
   </div>
   <div class="player-controls-right">
-
+    <div class="volume">
+      <div class="volumeOn" *ngIf="isVolumeOn" (click)="mute()">
+        <i class="max-volume" *ngIf="volume <= 1 && volume >= 0.7">
+          <svg aria-hidden="true" class="svg-inline--fa fa-volume-up icon-volume" data-icon="volume-up"
+               data-prefix="fal" focusable="false"
+               role="img" viewBox="0 0 576 512"
+               xmlns="http://www.w3.org/2000/svg">
+            <path class=""
+                  d="M342.91 193.57c-7.81-3.8-17.5-.48-21.34 7.5-3.81 7.97-.44 17.53 7.53 21.34C343.22 229.2 352 242.06 352 256s-8.78 26.8-22.9 33.58c-7.97 3.81-11.34 13.38-7.53 21.34 3.86 8.05 13.54 11.29 21.34 7.5C368.25 306.28 384 282.36 384 256s-15.75-50.29-41.09-62.43zM231.81 64c-5.91 0-11.92 2.18-16.78 7.05L126.06 160H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c4.87 4.87 10.88 7.05 16.78 7.05 12.33 0 24.19-9.52 24.19-24.02V88.02C256 73.51 244.13 64 231.81 64zM224 404.67L139.31 320H32V192h107.31L224 107.33v297.34zM421.51 1.83c-7.89-4.08-17.53-1.12-21.66 6.7-4.13 7.81-1.13 17.5 6.7 21.61 84.76 44.55 137.4 131.1 137.4 225.85s-52.64 181.3-137.4 225.85c-7.82 4.11-10.83 13.8-6.7 21.61 4.1 7.75 13.68 10.84 21.66 6.7C516.78 460.06 576 362.67 576 255.99c0-106.67-59.22-204.06-154.49-254.16zM480 255.99c0-66.12-34.02-126.62-88.81-157.87-7.69-4.38-17.59-1.78-22.04 5.89-4.45 7.66-1.77 17.44 5.96 21.86 44.77 25.55 72.61 75.4 72.61 130.12s-27.84 104.58-72.61 130.12c-7.72 4.42-10.4 14.2-5.96 21.86 4.3 7.38 14.06 10.44 22.04 5.89C445.98 382.62 480 322.12 480 255.99z"
+                  fill="currentColor"></path>
+          </svg>
+        </i>
+        <i class="volume-70%" *ngIf="volume < 0.7 && volume >= 0.3">
+          <svg aria-hidden="true" class="svg-inline--fa fa-volume icon-volume" data-icon="volume"
+               data-prefix="fal" focusable="false"
+               role="img" viewBox="0 0 480 512"
+               xmlns="http://www.w3.org/2000/svg">
+            <path class=""
+                  d="M342.91 193.57c-7.81-3.8-17.5-.48-21.34 7.5-3.81 7.97-.44 17.53 7.53 21.34C343.22 229.2 352 242.06 352 256c0 13.94-8.78 26.8-22.9 33.58-7.97 3.81-11.34 13.38-7.53 21.34 3.86 8.05 13.54 11.29 21.34 7.5C368.25 306.28 384 282.36 384 256s-15.75-50.29-41.09-62.43zM231.81 64c-5.91 0-11.92 2.18-16.78 7.05L126.06 160H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c4.87 4.87 10.88 7.05 16.78 7.05 12.33 0 24.19-9.52 24.19-24.02V88.02C256 73.51 244.13 64 231.81 64zM224 404.67L139.31 320H32V192h107.31L224 107.33v297.34zm256-148.68c0-66.12-34.02-126.62-88.81-157.87-7.69-4.38-17.59-1.78-22.04 5.89-4.45 7.66-1.77 17.44 5.96 21.86 44.77 25.55 72.61 75.4 72.61 130.12s-27.84 104.58-72.61 130.12c-7.72 4.42-10.4 14.2-5.96 21.86 4.3 7.38 14.06 10.44 22.04 5.89C445.98 382.62 480 322.12 480 255.99z"
+                  fill="currentColor"></path>
+          </svg>
+        </i>
+        <i class="volume-30%" *ngIf="volume < 0.3 && volume > 0">
+          <svg aria-hidden="true" class="svg-inline--fa fa-volume-down icon-volume" data-icon="volume-down" data-prefix="fal" focusable="false"
+               role="img" viewBox="0 0 384 512"
+               xmlns="http://www.w3.org/2000/svg">
+            <path class=""
+                  d="M342.91 194.57c-7.81-3.8-17.5-.48-21.34 7.5-3.81 7.97-.44 17.53 7.53 21.34C343.22 230.2 352 243.06 352 257c0 13.94-8.78 26.8-22.9 33.58-7.97 3.81-11.34 13.38-7.53 21.34 3.86 8.05 13.54 11.29 21.34 7.5C368.25 307.28 384 283.36 384 257s-15.75-50.29-41.09-62.43zM231.81 65c-5.91 0-11.92 2.18-16.78 7.05L126.06 161H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c4.87 4.87 10.88 7.05 16.78 7.05 12.33 0 24.19-9.52 24.19-24.02V89.02C256 74.51 244.13 65 231.81 65zM224 405.67L139.31 321H32V193h107.31L224 108.33v297.34z"
+                  fill="currentColor"></path>
+          </svg>
+        </i>
+      </div>
+      <div class="mute" *ngIf="volume == 0" (click)="unmute()">
+        <svg aria-hidden="true" class="svg-inline--fa fa-volume-mute icon-volume" data-icon="volume-mute" data-prefix="fal" focusable="false"
+             role="img" viewBox="0 0 512 512"
+             xmlns="http://www.w3.org/2000/svg">
+          <path class=""
+                d="M454.63 256l55.03-55.03c3.12-3.12 3.12-8.19 0-11.31l-11.31-11.31c-3.12-3.12-8.19-3.12-11.31 0L432 233.37l-55.03-55.03c-3.12-3.12-8.19-3.12-11.31 0l-11.31 11.31c-3.12 3.12-3.12 8.19 0 11.31L409.37 256l-55.03 55.03c-3.12 3.12-3.12 8.19 0 11.31l11.31 11.31c3.12 3.12 8.19 3.12 11.31 0L432 278.63l55.03 55.03c3.12 3.12 8.19 3.12 11.31 0l11.31-11.31c3.12-3.12 3.12-8.19 0-11.31L454.63 256zM231.81 64c-5.91 0-11.92 2.18-16.78 7.05L126.06 160H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c4.87 4.87 10.88 7.05 16.78 7.05 12.33 0 24.19-9.52 24.19-24.02V88.02C256 73.51 244.13 64 231.81 64zM224 404.67l-75.32-75.3-9.37-9.37H32V192h107.31l9.37-9.37 75.32-75.3v297.34z"
+                fill="currentColor"></path>
+        </svg>
+      </div>
+    </div>
+    <input type="range" min="0" max="1" step="0.1" class="volumeBar" value="{{volume}}" (change)="changeVolume($event)">
   </div>
 </div>

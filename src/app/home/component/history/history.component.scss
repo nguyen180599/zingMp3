@@ -75,7 +75,9 @@
   padding: 0;
   display: block;
 }
-
+.zm-card {
+  //position: relative;
+}
 .zm-card-image {
   overflow: hidden;
   border-radius: 4px;
@@ -101,8 +103,13 @@
   opacity: 0;
 }
 
+.detail-music {
+  z-index: 1;
+}
+
 .zm-card-image:hover .playlist-action {
   opacity: 1;
+  z-index: 999;
 }
 
 .playlist-action button {
@@ -116,6 +123,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 999;
 }
 
 .playlist-action button:not(.play-music):hover {
@@ -129,19 +137,28 @@
 }
 
 .play-music span {
-  font-size: 45px;
+  width: 18px;
   margin: 0;
   padding: 0;
   line-height: 0;
+
 }
 
 .play-music {
   width: 45px !important;
   height: 45px !important;
+  border: 1px solid #fff !important;
+  border-radius: 50%;
+  display: block;
 }
 
 .play-music span:hover {
   filter: brightness(0.85);
+}
+
+.musicIsPlay {
+  border-radius: 50%;
+  width: 45px;
 }
 
 .zm-card-content .title a {
