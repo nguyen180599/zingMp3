@@ -137,7 +137,7 @@
 }
 
 .play-music span {
-  width: 18px;
+  width: 15px;
   margin: 0;
   padding: 0;
   line-height: 0;
@@ -176,4 +176,7 @@
 
 .zm-card-content .title a:hover {
   color: #fe63da;;
+}
+.zm-card-image > .active {
+  opacity: 1;
 }

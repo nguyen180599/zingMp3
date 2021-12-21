@@ -1,4 +1,4 @@
-<div class="player-control-container">
+<div class="player-control-container" *ngIf="audioList.length != 0">
   <div class="player-controls-left">
     <div class="level-item is-narrow">
       <div class="media">
@@ -91,7 +91,7 @@
         </i>
       </div>
       <div (click)="playBtn()" [class]="" class="btn btn-toggle-play">
-        <i (click)="isPlaying = false" *ngIf="isPlaying">
+        <i (click)="isPlaying = !isPlaying" *ngIf="isPlaying">
           <svg aria-hidden="true" class="svg-inline--fa fa-pause fa-w-14 fa-fw fa-lg" data-icon="pause"
                data-prefix="fas" focusable="false"
                role="img" viewBox="0 0 448 512"
@@ -101,7 +101,7 @@
                   fill="currentColor"></path>
           </svg>
         </i>
-        <i (click)="isPlaying = true" *ngIf="!isPlaying">
+        <i (click)="isPlaying = !isPlaying" *ngIf="!isPlaying">
           <svg aria-hidden="true" class="svg-inline--fa fa-play fa-w-14 fa-lg" data-icon="play" data-prefix="fas"
                focusable="false"
                role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
@@ -135,8 +135,8 @@
         </i>
       </div>
     </div>
-    <audio #audio (timeupdate)="handle()" [loop]="isRepeat">
-      <source #source src="{{this.audioList[this.currentIndex].url}}" type="audio/mpeg">
+    <audio #audio (timeupdate)="handle()" [loop]="isRepeat" autoplay>
+      <source #source src="{{this.audioList[this.currentIndex].path}}" type="audio/mpeg">
     </audio>
     <div class="player">
       <span> {{formatTime(currentTime)}}</span>

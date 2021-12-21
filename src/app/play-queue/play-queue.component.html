@@ -21,7 +21,7 @@
             </span>
           </button>
         </div>
-        <div class="level-item">
+        <div class="level-item" (click)="deleteList()">
             <span id="queue_menu">
               <button class="zm-btn zm-tooltip-btn is-hover-circle button" tabindex="0">
                 <span class="material-icons">
@@ -33,18 +33,32 @@
       </div>
     </div>
   </div>
-  <div class="play-queue-main">
-    <div class="media is-pre">
+  <div class="play-queue-main" >
+    <div class="media is-pre" *ngFor="let song of playList">
       <div class="media-left">
         <div class="song-thumb">
-          <figure class="image is-40x40" title="Mập Mờ" style="--image-background: url('https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/2/c/a/d/2cad2920d72bbd50cfac43c3cbd000dc.jpg')"></figure>
+          <figure class="image is-40x40"
+                  style="--image-background: url({{song.img}})"
+                  title="{{song.name}}"></figure>
           <div class="opacity "></div>
           <div class="zm-actions-container">
             <div class="zm-box zm-actions">
-              <button class="zm-btn zm-tooltip-btn animation-like is-hidden active is-hover-circle button" tabindex="0">
-                <i class="icon ic-like"></i><i class="icon ic-like-full"></i></button>
-              <button class="zm-btn action-play  button" tabindex="0"><i class="icon action-play ic-play"></i></button>
-              <button class="zm-btn zm-tooltip-btn is-hidden is-hover-circle button" tabindex="0"><i
+              <button [class]="true ? 'active': ''" (click)="playSong(song, $event)" class="zm-btn zm-tooltip-btn animation-like is-hidden is-hover-circle button" tabindex="0">
+                <i *ngIf="indexPlay != song.id || isPlay == false">
+                  <svg _ngcontent-ams-c25="" aria-hidden="true" class="svg-inline--fa fa-play fa-w-14 fa-lg" data-icon="play" data-prefix="fas"
+                       focusable="false" role="img" viewBox="0 0 448 512"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path _ngcontent-ams-c25=""
+                          d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                          fill="currentColor"></path>
+                  </svg>
+                </i>
+                <i *ngIf="indexPlay == song.id && isPlay">
+                  <img alt="" src="https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/icons/icon-playing.gif">
+                </i>
+              </button>
+
+              <button *ngIf="false" class="zm-btn zm-tooltip-btn is-hidden is-hover-circle button" tabindex="0"><i
                 class="icon ic-more"></i></button>
             </div>
           </div>
@@ -58,8 +72,8 @@
       <div class="media-right">
         <div class="level">
           <div class="level-item">
-            <button class="zm-btn zm-tooltip-btn animation-like undefined active is-hover-circle button" tabindex="0"><i
-              class="icon ic-like"></i><i class="icon ic-like-full"></i></button>
+            <button class="zm-btn zm-tooltip-btn animation-like undefined active is-hover-circle button" tabindex="0">
+              <i class="icon ic-like"></i><i class="icon ic-like-full"></i></button>
           </div>
           <div class="level-item">
             <button class="zm-btn zm-tooltip-btn is-hover-circle button" tabindex="0"><i class="icon ic-more"></i>

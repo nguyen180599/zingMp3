@@ -1,5 +1,8 @@
-import {AfterViewInit, Component, ElementRef, ViewChild, OnInit} from '@angular/core';
+import {AfterViewInit, Component, DoCheck, ElementRef, OnChanges, OnInit, SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {ServiceHttpService} from "../Services/service-http.service";
+import {Song} from "../model/song";
 
 // @ts-ignore
 // @ts-ignore
@@ -8,23 +11,57 @@ import {ServiceHttpService} from "../Services/service-http.service";
   templateUrl: './player-control.component.html',
   styleUrls: ['./player-control.component.scss']
 })
-export class PlayerControlComponent implements AfterViewInit {
+export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, OnChanges {
   @ViewChild("audio") audio!: ElementRef;
   @ViewChild("source") source!: ElementRef;
 
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+  }
 
   constructor(
     private serverHttp: ServiceHttpService
-  ) {}
+  ) {
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.serverHttp.playList.length != 0) {
+      this.audio.nativeElement.src = this.audioList[0].path;
+      this.audio.nativeElement.play();
+      this.isPlaying = this.serverHttp.isPlayMusic;
+    }
+  }
+
+  ngDoCheck(): void {
+        // throw new Error('Method not implemented.');
+    this.serverHttp.musicSubject.subscribe((playItem) => {
+      if (playItem != '') {
+        this.audioList = this.serverHttp.playList;
+        this.isPlaying = this.serverHttp.isPlayMusic;
+        if (this.serverHttp.isPlayMusic == true) {
+          this.audio.nativeElement.play();
+        } else{
+          this.audio.nativeElement.pause();
+        }
+      }
+    });
+
+  }
 
   ngOnInit(): void {
-    this.serverHttp.getSong().subscribe((data) => {
-    });
-    this.serverHttp.musicSubject.subscribe((playItem) => {
-      console.log(playItem);
-    } );
+    // console.log(this.audioList)
+    console.log(this.serverHttp.playList);
+    if (this.serverHttp.playList.length > 0) {
+      this.audioList = this.serverHttp.playList;
+      if (this.audioList.length > 0) {
+        this.audio.nativeElement.src = this.audioList[0].path;
+        this.audio.nativeElement.play();
+        this.isPlaying = this.serverHttp.isPlayMusic;
+      }
+
+    }
+
   }
 
   currentIndex = 0;
@@ -34,19 +71,10 @@ export class PlayerControlComponent implements AfterViewInit {
   isVolumeOn = true;
   currentTime = 0;
   volume = 1;
+  pastVolume = this.volume;
   config = {};
 
-  audioList = [
-    {
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    },
-    {
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
-    },
-    {
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
-    }
-  ];
+  audioList: Song[] = [];
 
   setConfig = function (key: any, value: any) {
     // @ts-ignore
@@ -54,16 +82,21 @@ export class PlayerControlComponent implements AfterViewInit {
   };
 
   playBtn = () => {
+    this.isPlaying = !this.isPlaying;
+    this.serverHttp.isPlayMusic = this.isPlaying;
+
     if (this.isPlaying == true) {
       this.audio.nativeElement.play();
       console.log(this.audio);
     } else {
       this.audio.nativeElement.pause();
     }
+
+
   };
 
   loadCurrentSong() {
-    this.audio.nativeElement.src = this.audioList[this.currentIndex].url;
+    this.audio.nativeElement.src = this.audioList[this.currentIndex].path;
   }
 
   playRandom() {
@@ -113,6 +146,7 @@ export class PlayerControlComponent implements AfterViewInit {
     this.isRepeat = !this.isRepeat;
     this.setConfig("isRepeat", this.isRepeat);
   };
+
   _a = 0;
 
   formatTime(a: number) {
@@ -153,15 +187,19 @@ export class PlayerControlComponent implements AfterViewInit {
     const changevolume1 = e.target.value;
     this.audio.nativeElement.volume = changevolume1;
     this.volume = this.audio.nativeElement.volume;
+    this.pastVolume = this.volume;
   }
 
   mute() {
+    this.pastVolume = this.audio.nativeElement.volume;
     this.audio.nativeElement.volume = 0;
     this.volume = 0;
   }
+
   unmute() {
-    this.audio.nativeElement.volume = 0.5;
-    this.volume = 0.5;
+
+    this.audio.nativeElement.volume = this.pastVolume;
+    this.volume = this.pastVolume;
   }
 }
 

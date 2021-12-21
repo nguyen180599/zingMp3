@@ -1,15 +1,18 @@
 .root {
   background: var(--background);
-  height: 100vh;
+  //height: calc(100vh - 90px);
   overflow: hidden;
   display: flex;
 }
 
+.top {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
 .sidebar {
   background: var(--side-color);
   width: 240px;
-  height: calc(100vh - 90px);
-  max-height: calc(100vh - 90px);
 }
 
 .header {
@@ -26,12 +29,11 @@
   position: absolute;
   z-index: 0;
   right: 0;
-  bottom: 90px;
+
   width: 320px;
+  height: 100%;
   border-bottom: none;
   border-left: 1px solid var(--border-primary);
-  height: calc(100vh - 90px);
-  max-height: calc(100vh - 90px);
 }
 
 .main {
@@ -39,8 +41,6 @@
   margin-right: 320px;
   //padding-top: 70px;
   z-index: 1;
-  height: calc(100vh - 90px);
-  max-height: calc(100vh - 90px);
   //margin: 70px 56px 0 56px;
 }
 

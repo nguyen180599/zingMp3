@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, DoCheck} from '@angular/core';
+import {ServiceHttpService} from "./Services/service-http.service";
 
 
 @Component({
@@ -6,6 +7,19 @@ import {Component} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements DoCheck{
   title = 'zingmp3';
+
+  constructor(private serverHttp: ServiceHttpService) {
+  }
+
+  iSMusic = false;
+  ngDoCheck(): void {
+    if (this.serverHttp.playList.length == 0) {
+      this.iSMusic = false;
+    } else {
+      this.iSMusic = true;
+    }
+  }
+
 }

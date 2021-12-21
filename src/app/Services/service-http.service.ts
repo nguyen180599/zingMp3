@@ -33,5 +33,9 @@ export class ServiceHttpService {
     }
     return throwError('Something bad happened; Please try again later.');
   }
+
+  public isPlayMusic = false;
+  public idSongIsPlay = 0;
+  public playList: Song[] = [];
   musicSubject = new BehaviorSubject<any>([]);
 }

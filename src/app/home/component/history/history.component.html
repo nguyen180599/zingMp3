@@ -25,7 +25,7 @@
                 <img
                   alt=""
                   src="../../../../{{song.img}}">
-                <div class="playlist-action">
+                <div class="playlist-action" [class]="isPlay && indexPlay == song.id ? 'active': ''">
                   <div class="add-to-lovelist">
                     <button class="add">
                       <span class="material-icons outlined">
@@ -36,14 +36,14 @@
                   <div class="play">
                     <button (click)="addToPlayList(song, $event)"
                             class="play-music">
-                      <span *ngIf="!isPlay" class="material-icons outlined">
+                      <span *ngIf="indexPlay != song.id || isPlay == false" class="material-icons outlined">
                         <svg _ngcontent-qob-c25="" aria-hidden="true" class="svg-inline--fa fa-play fa-w-14 fa-lg" data-icon="play"
                              data-prefix="fas" focusable="false" role="img" viewBox="0 0 448 512"
                              xmlns="http://www.w3.org/2000/svg"><path _ngcontent-qob-c25=""
                                                                                 d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
                                                                                 fill="currentColor"></path></svg>
                       </span>
-                      <span *ngIf="isPlay" class="musicIsPlay">
+                      <span *ngIf="isPlay && indexPlay == song.id" class="musicIsPlay">
                         <img alt="" src="https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/icons/icon-playing.gif">
                       </span>
                     </button>
