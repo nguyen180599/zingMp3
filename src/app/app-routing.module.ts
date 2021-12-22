@@ -5,9 +5,9 @@ import {DetaiComponent} from "./detai/detai.component";
 import {HighChartComponent} from "./home/component/high-chart/high-chart.component";
 
 const routes: Routes = [
-  // {path: '', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'detail/:id', component: DetaiComponent},
-  {path: '', component: HighChartComponent}
+  // {path: '', component: HighChartComponent}
 ];
 
 @NgModule({

@@ -58,7 +58,7 @@
                 </div>
               </div>
             </div>
-            <div class="zm-card-content"><h4 class="title is-6">
+            <div class="zm-card-content"><h4 class="title is-6" [class]="song.hot ? 'check' : ''">
               <a class=""
                  href="/detail/{{song.name | nameToUrl}}"
                  title="Nhạc Dành Cho Game Thủ Liên Minh"><span><span><span>{{song.name}} </span><br><span>Game Thủ Liên Minh</span></span><span

@@ -49,6 +49,7 @@ export class HistoryComponent implements OnInit, DoCheck {
     if (this.prevSong.length >= 2) {
       this.prevSong.splice(0, this.prevSong.length - 1);
     }
+    this.listSongs[this.listSongs.indexOf(song)].hot = !this.listSongs[this.listSongs.indexOf(song)].hot;
   }
 
   ngDoCheck(): void {

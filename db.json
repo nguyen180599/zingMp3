@@ -36,7 +36,7 @@
       "path": "assets/musics/ChangAiCoTheThayTheEm.mp3",
       "img": "assets/images/ChangAiCoTheThayTheEm.jpg",
       "singer": ["abc", "def"],
-      "hot": true,
+      "hot": false,
       "nearly": 4,
       "albumID": [1, 2, 3, 4, 5]
     },
