@@ -8,7 +8,7 @@
             <div class="thumbnail">
               <figure class="image is-50x50 is-rounded"><img
                 alt=""
-                src="https://photo-resize-zmp3.zadn.vn/w240_r1x1_jpeg/cover/a/6/5/7/a657568d578b6e9ad66fa7d7b5b524cc.jpg">
+                src="{{audioList[currentIndex].img}}">
               </figure>
             </div>
             <!--  icons music  -->
@@ -39,15 +39,15 @@
             <div class="song-info-wrapper" style="">
               <span class="song-title-item">
                 <a class="" href="/album/Nhac-Moi-Moi-Ngay-Bao-Anh-Rita-Ora-K-ICM-IVE/67WIO6CF.html">
-                  <div class="title-wrapper"><span class="item-title title">Deja Vu</span></div>
+                  <div class="title-wrapper"><span class="item-title title">{{audioList[currentIndex].name}}</span></div>
                 </a>
               </span>
             </div>
           </div>
           <h3 class="is-one-line is-truncate subtitle">
             <i class="icon indicator ic-explicit"></i>
-            <a class="is-ghost" href="/nghe-si/James-Arthur">
-              James Arthur
+            <a class="is-ghost" href="/nghe-si/{{singer}}" *ngFor="let singer of audioList[currentIndex].singer; index as i">
+              {{singer}}<span *ngIf="i < audioList[currentIndex].singer.length - 1">,&nbsp;</span>
             </a>
           </h3>
         </div>
@@ -91,7 +91,7 @@
         </i>
       </div>
       <div (click)="playBtn()" [class]="" class="btn btn-toggle-play">
-        <i (click)="isPlaying = !isPlaying" *ngIf="isPlaying">
+        <i *ngIf="isPlaying">
           <svg aria-hidden="true" class="svg-inline--fa fa-pause fa-w-14 fa-fw fa-lg" data-icon="pause"
                data-prefix="fas" focusable="false"
                role="img" viewBox="0 0 448 512"
@@ -101,7 +101,7 @@
                   fill="currentColor"></path>
           </svg>
         </i>
-        <i (click)="isPlaying = !isPlaying" *ngIf="!isPlaying">
+        <i *ngIf="!isPlaying">
           <svg aria-hidden="true" class="svg-inline--fa fa-play fa-w-14 fa-lg" data-icon="play" data-prefix="fas"
                focusable="false"
                role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">

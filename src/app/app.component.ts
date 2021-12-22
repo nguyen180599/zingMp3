@@ -13,12 +13,12 @@ export class AppComponent implements DoCheck{
   constructor(private serverHttp: ServiceHttpService) {
   }
 
-  iSMusic = false;
+  isMusic = false;
   ngDoCheck(): void {
     if (this.serverHttp.playList.length == 0) {
-      this.iSMusic = false;
+      this.isMusic = false;
     } else {
-      this.iSMusic = true;
+      this.isMusic = true;
     }
   }
 

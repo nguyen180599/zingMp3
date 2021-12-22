@@ -1,14 +1,16 @@
 .root {
   background: var(--background);
-  //height: calc(100vh - 90px);
-  overflow: hidden;
+  height: 100vh;
+  overflow: hidden ;
   display: flex;
+  position: relative;
 }
 
 .top {
   position: relative;
   width: 100%;
   display: flex;
+  transition: 0.5s;
 }
 .sidebar {
   background: var(--side-color);
@@ -57,4 +59,6 @@
   border-top: 1.5px solid var(--border-primary);
   z-index: 15;
   overflow: hidden;
+  transition: 0.5s;
+
 }

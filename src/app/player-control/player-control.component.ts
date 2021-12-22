@@ -29,17 +29,37 @@ export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, O
     if (this.serverHttp.playList.length != 0) {
       this.audio.nativeElement.src = this.audioList[0].path;
       this.audio.nativeElement.play();
-      this.isPlaying = this.serverHttp.isPlayMusic;
+      // this.isPlaying = this.serverHttp.isPlayMusic;
+    }
+    if (this.audioList.length != 0) {
+      if (this.isPlaying == true) {
+        this.audio.nativeElement.play();
+      } else{
+        this.audio.nativeElement.pause();
+      }
     }
   }
 
   ngDoCheck(): void {
         // throw new Error('Method not implemented.');
+    this.isPlaying = this.serverHttp.isPlayMusic;
+
+    if (this.serverHttp.playList.length == 0) {
+      this.audioList = [];
+    }
+
+
+  }
+
+  ngOnInit(): void {
+    // console.log(this.audioList)
+    this.audioList = this.serverHttp.playList;
+
     this.serverHttp.musicSubject.subscribe((playItem) => {
       if (playItem != '') {
         this.audioList = this.serverHttp.playList;
         this.isPlaying = this.serverHttp.isPlayMusic;
-        if (this.serverHttp.isPlayMusic == true) {
+        if (this.isPlaying == true) {
           this.audio.nativeElement.play();
         } else{
           this.audio.nativeElement.pause();
@@ -47,19 +67,19 @@ export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, O
       }
     });
 
-  }
-
-  ngOnInit(): void {
-    // console.log(this.audioList)
-    console.log(this.serverHttp.playList);
     if (this.serverHttp.playList.length > 0) {
       this.audioList = this.serverHttp.playList;
+
       if (this.audioList.length > 0) {
         this.audio.nativeElement.src = this.audioList[0].path;
         this.audio.nativeElement.play();
         this.isPlaying = this.serverHttp.isPlayMusic;
-      }
 
+      }
+    } else {
+      this.serverHttp.isPlayMusic = false;
+      this.audioList = [];
+      this.audio.nativeElement.stop();
     }
 
   }
@@ -84,7 +104,6 @@ export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, O
   playBtn = () => {
     this.isPlaying = !this.isPlaying;
     this.serverHttp.isPlayMusic = this.isPlaying;
-
     if (this.isPlaying == true) {
       this.audio.nativeElement.play();
       console.log(this.audio);

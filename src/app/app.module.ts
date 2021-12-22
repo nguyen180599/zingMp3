@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
-
+import {HighchartsChartModule} from "highcharts-angular";
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -23,6 +23,7 @@ import {AngMusicPlayerModule} from "ang-music-player";
 import {PlyrModule} from "ngx-plyr";
 import {FormsModule} from "@angular/forms";
 import { NameToUrlPipe } from './name-to-url.pipe';
+import { HighChartComponent } from './home/component/high-chart/high-chart.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NameToUrlPipe } from './name-to-url.pipe';
     HistoryComponent,
     PlaylistSectionComponent,
     PlayerControlComponent,
-    NameToUrlPipe
+    NameToUrlPipe,
+    HighChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { NameToUrlPipe } from './name-to-url.pipe';
     SwiperModule,
     AngMusicPlayerModule,
     PlyrModule,
-    FormsModule
+    FormsModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
