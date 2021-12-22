@@ -36,14 +36,14 @@
   <div class="play-queue-main" >
     <div class="media is-pre" *ngFor="let song of playList" [class]="indexPlay == song.id ? 'active' : ''">
       <div class="media-left">
-        <div class="song-thumb">
+        <div class="song-thumb" [class]="isPlay ? 'active': ''">
           <figure class="image is-40x40"
                   style="--image-background: url({{song.img}})"
                   title="{{song.name}}"></figure>
           <div class="opacity "></div>
-          <div class="zm-actions-container">
+          <div class="zm-actions-container" >
             <div class="zm-box zm-actions">
-              <button [class]="true ? 'active': ''" (click)="playSong(song, $event)" class="zm-btn zm-tooltip-btn animation-like is-hidden is-hover-circle button" tabindex="0">
+              <button  (click)="playSong(song, $event)" class="zm-btn zm-tooltip-btn animation-like is-hidden is-hover-circle button" tabindex="0">
                 <i *ngIf="indexPlay != song.id || isPlay == false">
                   <svg _ngcontent-ams-c25="" aria-hidden="true" class="svg-inline--fa fa-play fa-w-14 fa-lg" data-icon="play" data-prefix="fas"
                        focusable="false" role="img" viewBox="0 0 448 512"

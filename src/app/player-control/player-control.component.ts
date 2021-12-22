@@ -165,6 +165,8 @@ export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, O
     this.loadCurrentSong();
     this.audio.nativeElement.play();
     this.isPlaying = true;
+    this.serverHttp.isPlayMusic = this.isPlaying;
+
   }
 
   prevSong = () => {
@@ -179,6 +181,7 @@ export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, O
     this.loadCurrentSong();
     this.audio.nativeElement.play();
     this.isPlaying = true;
+    this.serverHttp.isPlayMusic = this.isPlaying;
   }
 
   randomBtn() {

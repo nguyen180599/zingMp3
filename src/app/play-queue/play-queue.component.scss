@@ -197,6 +197,13 @@ h3.is-one-line {
   opacity: 0;
 }
 
+.media-left .active .zm-actions-container{
+  opacity: 1;
+}
+
+.media-left .active .opacity {
+  opacity: 0.4;
+}
 .media:hover .zm-actions-container {
   opacity: 1;
 }
@@ -215,7 +222,7 @@ h3.is-one-line {
   width: 14px;
 }
 
-.play-queue-main .active {
+.play-queue-main > .active {
   background: #fe63da;
   filter: brightness(1);
 }

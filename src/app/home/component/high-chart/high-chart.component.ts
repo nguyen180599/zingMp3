@@ -19,16 +19,16 @@ export class HighChartComponent implements OnInit {
       chart: {
         type: 'spline',
       },
-      // title: {
-      //   text: '',
-      // },
+      title: {
+        text: '',
+      },
 
       credits: {  // nhãn tín dụng,đường link
         enabled: false
       },
 
       legend: {
-        enabled: false
+         enabled: false
       },
       xAxis: [
         {
@@ -39,6 +39,7 @@ export class HighChartComponent implements OnInit {
           // title: {
           //   text: 'tim',
           // },
+
           crosshair: {
             width: 1,
             color: 'rgb(39, 189, 156)',
@@ -66,22 +67,18 @@ export class HighChartComponent implements OnInit {
           text: '',
         },
         labels: {
-          enabled: false,  // ẩn trục y
+          enabled: true,  // ẩn trục y
         },
       },
 
       tooltip: {
-        // pointFormat: '{series.name}: <b>{point.y}</b><br/>',
-        // valueSuffix: '%',
-        // shared: true,
-        // valueDecimals: 2,
         useHTML: true,
         headerFormat: '<table><tr><th colspan="2"></th></tr>',
         pointFormat:
           '<tr><td rowspan="2"><img src="{series.options.custom.img}" style="width :40px; height: 40px"> </td>' +
           '<td style="color: {series.color}">{series.name}: </td>' +
           '<td rowspan="2" style="text-align: center"><b>{point.y}</b></td></tr>' +
-          '<tr><td><b>bùi anh tuấn</b></td></tr>',
+          '<tr><td><b>{series.options.custom.singer}</b></td></tr>',
         footerFormat: '</table>',
         valueSuffix: ' %', // Một chuỗi để nối vào giá trị y của mỗi chuỗi
         valueDecimals: 2, // Có bao nhiêu số thập phân để hiển thị trong mỗi giá trị y của chuỗi
@@ -104,7 +101,7 @@ export class HighChartComponent implements OnInit {
               ev.target.update({
                 marker: {
                   enabled: true,
-                  fillColor: 'red',
+                  fillColor: '#fff',
                   lineWidth: 2,
                   width: 10,
                   lineColor: null, // inherit from series
@@ -124,7 +121,7 @@ export class HighChartComponent implements OnInit {
 
       series: [
         {
-          name: '',
+          name: 'Top 1',
           color: 'rgb(39, 189, 156)',
 
           data: [
@@ -132,7 +129,8 @@ export class HighChartComponent implements OnInit {
             25, 27, 22, 20, 20, 22, 25,
           ],
           custom: {
-            img: '../assets/img/1a.jpg',
+            img: '../../../../assets/images/ChangAiCoTheThayTheEm.jpg',
+            singer: 'Abc Def Ghik'
           },
 
           marker: {
@@ -141,7 +139,7 @@ export class HighChartComponent implements OnInit {
           xAxis: 0,
         },
         {
-          name: '',
+          name: 'Top 2',
           color: 'blue',
 
           data: [
@@ -150,6 +148,7 @@ export class HighChartComponent implements OnInit {
           ],
           custom: {
             img: '../../../../assets/images/khongnoinhieu.jpg',
+            singer: "Phí Thị Hồng Nhung"
           },
 
           marker: {
@@ -159,7 +158,7 @@ export class HighChartComponent implements OnInit {
         },
 
         {
-          name: '',
+          name: 'Top 3',
           color: 'rgb(227, 80, 80)',
           data: [
             {
@@ -193,7 +192,8 @@ export class HighChartComponent implements OnInit {
             20,
           ],
           custom: {
-            img: '../assets/img/2a.jpg',
+            img: '../../../../assets/images/tientoigantoi.jpg',
+            singer: 'Phạm Xuân Nguyên'
           },
           marker: {
             symbol: 'circle',
