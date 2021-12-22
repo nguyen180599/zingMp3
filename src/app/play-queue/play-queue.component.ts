@@ -17,6 +17,7 @@ export class PlayQueueComponent implements OnInit, DoCheck {
   playList: Song[] = [];
   ngDoCheck(): void {
     this.isPlay = this.serverHttp.isPlayMusic;
+    this.indexPlay = this.serverHttp.idSongIsPlay;
     // this.serverHttp.playList = this.playList;
   }
 
@@ -41,7 +42,7 @@ export class PlayQueueComponent implements OnInit, DoCheck {
         this.playList = this.serverHttp.playList;
 
         this.isPlay = this.serverHttp.isPlayMusic;
-        this.indexPlay = this.playList[0].id;
+        this.indexPlay = this.serverHttp.idSongIsPlay;
       }
     });
 
@@ -50,7 +51,7 @@ export class PlayQueueComponent implements OnInit, DoCheck {
     this.serverHttp.isPlayMusic = !this.serverHttp.isPlayMusic;
     this.isPlay = this.serverHttp.isPlayMusic;
 
-    this.indexPlay = this.playList[0].id;
+    this.indexPlay = this.serverHttp.idSongIsPlay;
   }
 
   deleteList() {

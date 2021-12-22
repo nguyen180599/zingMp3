@@ -31,6 +31,7 @@ export class HistoryComponent implements OnInit, DoCheck {
 
   addToPlayList(song: any, e: any) {
     e.stopPropagation();  // nổi event lên trên thẻ a
+    this.serverHttp.idSongIsPlay = song.id;
     this.prevSong.push(song);
     if (this.isPlay == true && this.prevSong[0] == song){
       this.serverHttp.isPlayMusic = false;
@@ -43,16 +44,17 @@ export class HistoryComponent implements OnInit, DoCheck {
     }
     this.isPlay = this.serverHttp.isPlayMusic;
     // chỉ phát bài chọn mới nhất
-    this.indexPlay = song.id;
+    this.indexPlay = this.serverHttp.idSongIsPlay;
     let arr = song;
     this.serverHttp.musicSubject.next(song);
     if (this.prevSong.length >= 2) {
       this.prevSong.splice(0, this.prevSong.length - 1);
     }
-    this.listSongs[this.listSongs.indexOf(song)].hot = !this.listSongs[this.listSongs.indexOf(song)].hot;
+
   }
 
   ngDoCheck(): void {
     this.isPlay = this.serverHttp.isPlayMusic;
+    this.indexPlay = this.serverHttp.idSongIsPlay;
   }
 }

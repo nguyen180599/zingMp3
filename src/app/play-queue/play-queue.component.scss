@@ -167,7 +167,7 @@ h3.is-one-line {
   transition: 0.3s;
 }
 
-.card-info .is-ghost:hover {
+.card-info .is-ghost:hover .singer-name{
   color: #fe63da;
   text-decoration: underline;
 }
@@ -209,6 +209,13 @@ h3.is-one-line {
   height: 30px;
 }
 
-.zm-actions-container .zm-actions button i svg{
+.zm-actions-container .zm-actions button i svg,
+.zm-actions-container .zm-actions button i img
+{
   width: 14px;
+}
+
+.play-queue-main .active {
+  background: #fe63da;
+  filter: brightness(1);
 }

@@ -1,5 +1,5 @@
 <div class="root">
-  <div class="top" [style]="isMusic? 'height: calc(100vh - 90px)' : 'height: 100vh'">
+  <div [style]="isMusic? 'height: calc(100vh - 90px)' : 'height: 100vh'" class="top">
     <div class="sidebar">
       <app-menu-sidebar></app-menu-sidebar>
     </div>
@@ -8,12 +8,15 @@
     </div>
     <div class="main">
       <router-outlet></router-outlet>
+
     </div>
     <div class="play-queue">
       <app-play-queue></app-play-queue>
     </div>
   </div>
-  <div class="player-control" [style]="isMusic ? 'bottom: 0' : 'bottom: -90px'">
+  <div [style]="isMusic ? 'bottom: 0' : 'bottom: -90px'" class="player-control">
     <app-player-control></app-player-control>
+
   </div>
+
 </div>

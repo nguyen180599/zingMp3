@@ -1,4 +1,11 @@
-import {AfterViewInit, Component, DoCheck, ElementRef, OnChanges, OnInit, SimpleChanges,
+import {
+  AfterViewInit,
+  Component,
+  DoCheck,
+  ElementRef,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
   ViewChild
 } from '@angular/core';
 import {ServiceHttpService} from "../Services/service-http.service";
@@ -31,19 +38,23 @@ export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, O
       this.audio.nativeElement.play();
       // this.isPlaying = this.serverHttp.isPlayMusic;
     }
-    if (this.audioList.length != 0) {
-      if (this.isPlaying == true) {
-        this.audio.nativeElement.play();
-      } else{
-        this.audio.nativeElement.pause();
-      }
-    }
+    // if (this.audioList.length != 0) {
+    //   if (this.isPlaying == true) {
+    //     this.audio.nativeElement.play();
+    //   } else{
+    //     this.audio.nativeElement.pause();
+    //   }
+    // }
   }
 
   ngDoCheck(): void {
-        // throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
     this.isPlaying = this.serverHttp.isPlayMusic;
-
+    // if (this.audioList.length > 0 && this.isPlaying == true) {
+    //   this.audio.nativeElement.play();
+    // } else{
+    //   this.audio.nativeElement.pause();
+    // }
     if (this.serverHttp.playList.length == 0) {
       this.audioList = [];
     }
@@ -57,21 +68,32 @@ export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, O
 
     this.serverHttp.musicSubject.subscribe((playItem) => {
       if (playItem != '') {
+        this.previousId.push(playItem.id);
         this.audioList = this.serverHttp.playList;
         this.isPlaying = this.serverHttp.isPlayMusic;
+        this.currentIndex = this.audioList.length - 1;
+
         if (this.isPlaying == true) {
+          if (playItem.id != this.previousId[0] ) {
+            this.audio.nativeElement.src = playItem.path;
+          }
           this.audio.nativeElement.play();
-        } else{
+        } else {
           this.audio.nativeElement.pause();
         }
       }
+      this.previousId.splice(0, 1)
     });
 
     if (this.serverHttp.playList.length > 0) {
       this.audioList = this.serverHttp.playList;
 
       if (this.audioList.length > 0) {
-        this.audio.nativeElement.src = this.audioList[0].path;
+        this.index = this.audioList.findIndex((song) => {
+          song.id == this.serverHttp.idSongIsPlay;
+        });
+        this.currentIndex = this.index;
+        this.audio.nativeElement.src = this.audioList[this.index].path;
         this.audio.nativeElement.play();
         this.isPlaying = this.serverHttp.isPlayMusic;
 
@@ -84,6 +106,8 @@ export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, O
 
   }
 
+  index = 0;
+  previousId: number[] = [];
   currentIndex = 0;
   isPlaying = false;
   isRandom = false;
@@ -116,6 +140,7 @@ export class PlayerControlComponent implements OnInit, AfterViewInit, DoCheck, O
 
   loadCurrentSong() {
     this.audio.nativeElement.src = this.audioList[this.currentIndex].path;
+    this.serverHttp.idSongIsPlay = this.audioList[this.currentIndex].id;
   }
 
   playRandom() {

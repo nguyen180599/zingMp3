@@ -23,9 +23,9 @@
         </div>
         <div class="level-item" (click)="deleteList()">
             <span id="queue_menu">
-              <button class="zm-btn zm-tooltip-btn is-hover-circle button" tabindex="0">
+              <button class="zm-btn zm-tooltip-btn is-hover-circle button" tabindex="0" title="remove list">
                 <span class="material-icons">
-                  more_horiz
+                  close
                 </span>
               </button>
             </span>
@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="play-queue-main" >
-    <div class="media is-pre" *ngFor="let song of playList">
+    <div class="media is-pre" *ngFor="let song of playList" [class]="indexPlay == song.id ? 'active' : ''">
       <div class="media-left">
         <div class="song-thumb">
           <figure class="image is-40x40"
@@ -64,10 +64,10 @@
           </div>
         </div>
         <div class="card-info">
-          <div class="title-wrapper"><span class="item-title title"><span><span><span>Mập Mờ</span></span><span
+          <div class="title-wrapper"><span class="item-title title"><span><span><span>{{song.name}}</span></span><span
             style="position: fixed; visibility: hidden; top: 0px; left: 0px;">…</span></span></span></div>
-          <h3 class="is-one-line is-truncate subtitle"><a class="is-ghost" href="/nghe-si/Phi-Phuong-Anh">Phí Phương
-            Anh</a>, <a class="is-ghost" href="/nghe-si/RIN9">RIN9</a></h3></div>
+          <h3 class="is-one-line is-truncate subtitle">
+            <a class="is-ghost" href="/nghe-si/Phi-Phuong-Anh" *ngFor="let singer of song.singer; index as i"><span class="singer-name">{{singer}}</span><span *ngIf="i < song.singer.length - 1">,&nbsp;</span></a></h3></div>
       </div>
       <div class="media-right">
         <div class="level">

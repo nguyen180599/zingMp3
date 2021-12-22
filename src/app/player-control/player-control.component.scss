@@ -156,10 +156,13 @@
 }
 
 .player-controls-center {
+  position: absolute;
   width: 750px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  left: 50%;
+  margin-left: -375px;
 }
 
 .control {
